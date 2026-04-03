@@ -1,0 +1,8 @@
+:root {
+    /* Colores */
+    --color-primary: white;
+    --color-bg: black;
+
+    /* Tipografía */
+    --font-roboto: "Roboto", sans-serif;
+}
