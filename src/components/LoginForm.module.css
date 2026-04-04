@@ -1,0 +1,15 @@
+.formsCtn {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.errorMessage {
+    max-width: 400px;
+}
+
+@media (max-width: 800px) {
+    .errorMessage {
+        max-width: 200px;
+    }
+}

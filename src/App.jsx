@@ -1,6 +1,15 @@
+import {BrowserRouter} from "react-router-dom";
+
+import Header from "./components/Header.jsx";
+import UserProvider from "./contexts/UserProvider.jsx";
+
 function App() {
   return (
-    <>Test</>
+    <UserProvider>
+      <BrowserRouter>
+        <Header/>
+      </BrowserRouter>
+    </UserProvider>
   );
 }
 

@@ -1,8 +1,21 @@
 :root {
     /* Colores */
     --color-primary: white;
-    --color-bg: black;
+    --color-secondary: black;
+    --color-bg: rgb(25, 25, 25);
+    --color-page-theme-primary: rgb(0, 58, 167);
+    --color-page-theme-secondary: rgb(47, 47, 47);
+    --color-page-theme-tertiary: rgb(231, 231, 231);
+    --color-page-theme-quaternary: rgb(189, 34, 34);
+    --color-page-theme-quinary: rgb(0, 35, 99);
 
     /* Tipografía */
     --font-roboto: "Roboto", sans-serif;
+
+    /* Tamaños de letra */
+    --font-size-title: 20px;
+
+    /* Otros */
+    --padding-button: 7px;
+    --radius-button: 5px;
 }

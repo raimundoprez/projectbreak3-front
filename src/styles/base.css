@@ -1,6 +1,57 @@
 html {
   color: var(--color-primary);
   background-color: var(--color-bg);
-
   font-family: var(--font-roboto);
+}
+
+input {
+  padding: 4px;
+}
+
+button {
+  padding: var(--padding-button);
+  cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form > label {
+  display: flex;
+  gap: 10px;
+  justify-content: right;
+}
+
+form > label > span {
+  flex-grow: 1;
+}
+
+form > label > input {
+  width: 300px;
+}
+
+form > button[type="submit"] {
+  width: 200px;
+  align-self: flex-end;
+}
+
+.hidden {
+  display: none;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  form > label {
+    flex-direction: column;
+  }
+
+  form > label > input {
+    width: 230px;
+  }
 }
