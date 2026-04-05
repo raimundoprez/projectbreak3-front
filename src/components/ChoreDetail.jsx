@@ -39,9 +39,7 @@ function ChoreDetail({chores, setChores}) {
         const startDateDO = new DateObject(startDate);
 
         return (
-            <div className={styles.container}>
-                <h1>Detalles de la tarea</h1>
-
+            <>
                 <div className={styles.details}>
                     <span>
                         <span>Nombre</span>
@@ -80,7 +78,7 @@ function ChoreDetail({chores, setChores}) {
                     maxDate={endDate}
                     onChange={updateCompletedDays}
                 />
-            </div>
+            </>
         );
     }
 
@@ -135,9 +133,10 @@ function ChoreDetail({chores, setChores}) {
     }
 
     return (
-        <>
+        <div className={styles.container}>
+            <h1>Detalles de la tarea</h1>
             {chore && renderDetail()}
-        </>
+        </div>
     );
 }
 
