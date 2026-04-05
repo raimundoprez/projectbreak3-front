@@ -1,5 +1,5 @@
 import {FaUserSlash} from "react-icons/fa";
-import styles from "../styles/BigIconPanel.module.css";
+import styles from "./BigIconPanel.module.css";
 
 function NoSession() {
     return (

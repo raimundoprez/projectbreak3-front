@@ -1,5 +1,5 @@
 import {FaList} from "react-icons/fa6";
-import styles from "../styles/BigIconPanel.module.css";
+import styles from "../components/BigIconPanel.module.css";
 
 function Home() {
     return (
