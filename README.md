@@ -34,4 +34,4 @@ La aplicación que se ha desarrollado es multiusuario, lo que significa que es n
 
 ## Versión de prueba
 En el siguiente enlace se proporciona una versión de prueba del frontend.
-- LINK_PROYECTO
+- [Proyecto de prueba](https://projectbreak3-front.netlify.app/)
