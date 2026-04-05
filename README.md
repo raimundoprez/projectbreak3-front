@@ -33,5 +33,5 @@ La aplicación que se ha desarrollado es multiusuario, lo que significa que es n
 - react-multi-date-picker + react-date-object: Paquetes usados para crear el calendario interactivo de cada tarea.
 
 ## Versión de prueba
-En el siguiente en lace se proporciona una versión de prueba del frontend.
+En el siguiente enlace se proporciona una versión de prueba del frontend.
 - LINK_PROYECTO
