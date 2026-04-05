@@ -26,4 +26,12 @@ async function getAll(user) {
     return await request(user, endpoint + "/chore", "GET");
 }
 
-export {getAll};
+async function addCompletedDay(user, id, date) {
+    return await request(user, endpoint + "/chore/" + id + "/completedDays/" + date.toISOString(), "POST");
+}
+
+async function removeCompletedDay(user, id, date) {
+    return await request(user, endpoint + "/chore/" + id + "/completedDays/" + date.toISOString(), "DELETE");
+}
+
+export {getAll, addCompletedDay, removeCompletedDay};

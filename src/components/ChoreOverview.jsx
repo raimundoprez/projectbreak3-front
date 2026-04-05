@@ -1,10 +1,11 @@
+import {Link} from "react-router-dom";
 import styles from "./ChoreOverview.module.css";
 
 function ChoreOverview({chore}) {
     return (
-        <div className={styles.container + " clickable"}>
+        <Link to={`/tarea/${chore._id}`} className={styles.container}>
             {chore.name}
-        </div>
+        </Link>
     );
 }
 

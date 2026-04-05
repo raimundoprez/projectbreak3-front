@@ -4,6 +4,7 @@ import {Routes, Route} from "react-router-dom";
 import Home from "../pages/Home.jsx";
 import NoSession from "./NoSession.jsx";
 import ChoreCategory from "./ChoreCategory.jsx";
+import ChoreDetail from "./ChoreDetail.jsx";
 import UserContext from "../contexts/UserContext.js";
 import AlertContext from "../contexts/AlertContext.js";
 
@@ -59,6 +60,7 @@ function Main() {
                         <Route path="/trabajo" element={<ChoreCategory title="Trabajo" chores={chores.filter((chore) => chore.category === "Trabajo")}/>}/>
                         <Route path="/estudio" element={<ChoreCategory title="Estudio" chores={chores.filter((chore) => chore.category === "Estudio")}/>}/>
                         <Route path="/otro" element={<ChoreCategory title="Otro" chores={chores.filter((chore) => chore.category === "Otro")}/>}/>
+                        <Route path="/tarea/:id" element={<ChoreDetail chores={chores} setChores={setChores}/>}/>
                     </Routes>
                 :
                     <NoSession/>
