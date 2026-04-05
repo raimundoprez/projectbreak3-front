@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container > *:first-child {
+    font-size: var(--font-size-title);
+}
+
+.container > *:last-child {
+    font-size: 170px;
+    color: var(--color-page-theme-quaternary);
+}

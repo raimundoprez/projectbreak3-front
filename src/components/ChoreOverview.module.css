@@ -1,0 +1,9 @@
+.container {
+    padding: 12px;
+    border-radius: 10px;
+    background-color: var(--color-page-theme-primary);
+}
+
+.container:hover {
+    background-color: var(--color-page-theme-senary);
+}
