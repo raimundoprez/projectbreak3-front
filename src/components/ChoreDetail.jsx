@@ -1,5 +1,5 @@
 import {useState, useEffect, useContext} from "react";
-import {useParams} from "react-router-dom";
+import {useParams, useNavigate, Link} from "react-router-dom";
 import {Calendar} from "react-multi-date-picker";
 import DateObject from "react-date-object";
 
@@ -8,7 +8,7 @@ const months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", 
 
 import UserContext from "../contexts/UserContext.js";
 import AlertContext from "../contexts/AlertContext.js";
-import {addCompletedDay, removeCompletedDay} from "../utils/request.js";
+import {addCompletedDay, removeCompletedDay, remove} from "../utils/request.js";
 import styles from "./ChoreDetail.module.css";
 
 function ChoreDetail({chores, setChores}) {
@@ -16,6 +16,8 @@ function ChoreDetail({chores, setChores}) {
     const [selectDates, setSelectDates] = useState([]);
 
     const {id} = useParams();
+
+    const navigate = useNavigate();
 
     const {user} = useContext(UserContext);
     const {setOpen, setTitle, setContent} = useContext(AlertContext);
@@ -78,6 +80,11 @@ function ChoreDetail({chores, setChores}) {
                     maxDate={endDate}
                     onChange={updateCompletedDays}
                 />
+
+                <div className={styles.buttonsCtn}>
+                    <Link to={"/tarea/" + id + "/editar"}>Editar</Link>
+                    <button onClick={deleteChore}>Borrar</button>
+                </div>
             </>
         );
     }
@@ -129,6 +136,25 @@ function ChoreDetail({chores, setChores}) {
                     setSelectDates([...chore.completedDays]);
                 }
             }
+        }
+    }
+
+    async function deleteChore() {
+        const data = await remove(user, id);
+
+        if (!data) {
+            setOpen(true);
+            setTitle("Error");
+            setContent("Fallo al borrar la tarea");
+        }
+        else if (!data.response.ok) {
+            setOpen(true);
+            setTitle("Error");
+            setContent("Fallo al borrar la tarea: " + data.data.error);
+        }
+        else {
+            setChores(chores.filter((element) => element !== chore));
+            navigate("/todas");
         }
     }
 

@@ -2,6 +2,8 @@ import {useState, useEffect, useContext} from "react";
 import {Routes, Route} from "react-router-dom";
 
 import Home from "../pages/Home.jsx";
+import Edit from "../pages/Edit.jsx";
+import Create from "../pages/Create.jsx";
 import NoSession from "./NoSession.jsx";
 import ChoreCategory from "./ChoreCategory.jsx";
 import ChoreDetail from "./ChoreDetail.jsx";
@@ -61,6 +63,8 @@ function Main() {
                         <Route path="/estudio" element={<ChoreCategory title="Estudio" chores={chores.filter((chore) => chore.category === "Estudio")}/>}/>
                         <Route path="/otro" element={<ChoreCategory title="Otro" chores={chores.filter((chore) => chore.category === "Otro")}/>}/>
                         <Route path="/tarea/:id" element={<ChoreDetail chores={chores} setChores={setChores}/>}/>
+                        <Route path="/tarea/:id/editar" element={<Edit chores={chores} setChores={setChores}/>}/>
+                        <Route path="/crear" element={<Create setChores={setChores}/>}/>
                     </Routes>
                 :
                     <NoSession/>
